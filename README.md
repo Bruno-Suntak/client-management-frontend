@@ -43,5 +43,5 @@ Este é o projeto de front-end em React para o gerenciamento de clientes. Ele co
 1. Clone este repositório:
 
    ```bash
-   git clone https://github.com/seu-usuario/client-management-frontend.git
+   git clone https://github.com/bruno-suntak/client-management-frontend.git
    cd client-management-frontend
