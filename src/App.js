@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import ClientForm from './components/ClientForm';
+import ClientList from './components/ClientList';
+import NavigationBar from './components/Navbar';
+import axios from 'axios';
+import { Container } from 'react-bootstrap';
 
 function App() {
+  const [clients, setClients] = useState([]);
+
+  const fetchClients = () => {
+    axios.get('/api/clients')
+      .then(response => setClients(response.data))
+      .catch(error => console.error(error));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <NavigationBar />
+      <Container>
+        <ClientForm fetchClients={fetchClients} />
+        <ClientList clients={clients} fetchClients={fetchClients} />
+      </Container>
     </div>
   );
 }
