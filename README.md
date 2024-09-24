@@ -45,3 +45,11 @@ Este é o projeto de front-end em React para o gerenciamento de clientes. Ele co
    ```bash
    git clone https://github.com/bruno-suntak/client-management-frontend.git
    cd client-management-frontend
+
+## acesso ao backend
+
+1. Clone este repositório:
+
+   ```bash
+   git clone https://github.com/Bruno-Suntak/client-management-backend
+   cd client-management-backend
